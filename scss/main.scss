@@ -1,0 +1,66 @@
+$font-family-sans-serif: 'Freckle Face', cursive;
+$font-size-base: 1.5rem;
+
+$body-bg: hsl(0, 0%, 92%);
+$body-color: hsl(0, 0%, 29%);
+
+$navbar-nav-link-padding-x: 1rem;
+
+
+
+// Required
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+$spacers: (
+    6: ($spacer * 4.5),
+    7: ($spacer * 6)
+);
+
+// Optional
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/code";
+@import "node_modules/bootstrap/scss/grid";
+
+@import "node_modules/bootstrap/scss/navbar";
+@import "node_modules/bootstrap/scss/utilities";
+
+// from boostra.scss
+// @import "functions";
+// @import "variables";
+// @import "mixins";
+// @import "root";
+// @import "reboot";
+// @import "type";
+// @import "images";
+// @import "code";
+// @import "grid";
+// @import "tables";
+// @import "forms";
+// @import "buttons";
+// @import "transitions";
+// @import "dropdown";
+// @import "button-group";
+// @import "input-group";
+// @import "custom-forms";
+// @import "nav";
+// @import "navbar";
+// @import "card";
+// @import "breadcrumb";
+// @import "pagination";
+// @import "badge";
+// @import "jumbotron";
+// @import "alert";
+// @import "progress";
+// @import "media";
+// @import "list-group";
+// @import "close";
+// @import "modal";
+// @import "tooltip";
+// @import "popover";
+// @import "carousel";
+// @import "utilities";
+// @import "print";

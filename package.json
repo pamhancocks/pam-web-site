@@ -1,0 +1,57 @@
+{
+  "name": "pam-web-site",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "css-compile": "node-sass --output-style expanded --precision 6 scss/main.scss assets/css/main.css",
+    "css-prefix": "postcss --config postcss.config.js --output assets/css/main.css assets/css/main.css",
+    "css-minify": "cleancss --level 1 --output assets/css/main.min.css assets/css/main.css",
+    "css": "npm-run-all --sequential css-compile* css-prefix* css-minify*",
+    
+    "js-compile": "echo \"no js yet\" && exit 0",
+
+    "watch": "npm-run-all --parallel watch-css watch-js watch-metalsmith",
+    "watch-css": "nodemon --ignore js/ --ignore dist/ -e scss -x \"npm run css\"",
+    "watch-js": "nodemon --watch js -e js -x \"npm run js-compile\"",
+    "watch-metalsmith": "nodemon --watch scss --watch layouts --watch src -e hbs,md -x \"npm run build-static\"",
+    
+    "build-static": "node build",
+    "build": "npm-run-all --sequential css build-static",
+    
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    
+    "pam": "git subtree push --prefix=public/ blog master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pamhancocks/pam-web-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pamhancocks/pam-web-site/issues"
+  },
+  "homepage": "https://github.com/pamhancocks/pam-web-site#readme",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.6.0",
+    "bootstrap": "^4.1.1",
+    "clean-css-cli": "^4.1.11",
+    "jstransformer-handlebars": "^1.1.0",
+    "metalsmith": "^2.3.0",
+    "metalsmith-assets": "^0.1.0",
+    "metalsmith-inline-source": "^1.0.6",
+    "metalsmith-layouts": "^2.1.0",
+    "metalsmith-markdown": "^0.2.2",
+    "metalsmith-permalinks": "^0.5.0",
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.17.5",
+    "npm-run-all": "^4.1.3",
+    "postcss-cli": "^5.0.0"
+  }
+}
