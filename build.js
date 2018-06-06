@@ -7,9 +7,9 @@ const inlinesource = require('metalsmith-inline-source');
 
 Metalsmith(__dirname)
 .metadata({
-  title: "CrazyPinkWidow",
-  description: "CrazyPinkWidow's Blog",
-  url: "https://crazypinkwidow.github.io/"
+  title: "Pam Hancocks",
+  description: "Pam Hancocks",
+  url: "https://pamhancocks.github.io/"
 })
 .source('src')
 .destination('public')

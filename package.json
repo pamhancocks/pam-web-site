@@ -10,19 +10,18 @@
     "css": "npm-run-all --sequential css-compile* css-prefix* css-minify*",
     
     "js-compile": "echo \"no js yet\" && exit 0",
-
-    "watch": "npm-run-all --parallel watch-css watch-js watch-metalsmith",
+    
     "watch-css": "nodemon --ignore js/ --ignore dist/ -e scss -x \"npm run css\"",
     "watch-js": "nodemon --watch js -e js -x \"npm run js-compile\"",
-    "watch-metalsmith": "nodemon --watch scss --watch layouts --watch src -e hbs,md -x \"npm run build-static\"",
+    "watch": "nodemon --watch scss --watch layouts --watch src -e scss,hbs,md -x \"npm run build\"",
     
     "build-static": "node build",
     "build": "npm-run-all --sequential css build-static",
     
-    "start": "node server",
+    "start-server": "nodemon server",
+    "start": "npm-run-all --parallel start-server watch",
     "test": "echo \"Error: no test specified\" && exit 0",
-    
-    "pam": "git subtree push --prefix=public/ blog master"
+    "pam": "git subtree push --prefix=public/ pam master"
   },
   "repository": {
     "type": "git",

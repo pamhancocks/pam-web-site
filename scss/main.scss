@@ -1,12 +1,31 @@
-$font-family-sans-serif: 'Freckle Face', cursive;
+$font-family-sans-serif: 'Patrick Hand', cursive;
 $font-size-base: 1.5rem;
 
 $body-bg: hsl(0, 0%, 92%);
 $body-color: hsl(0, 0%, 29%);
 
+//$navbar-padding-y: ($spacer / 2) !default;
+$navbar-padding-y: 0.02rem;
+//$navbar-nav-link-padding-x: .5rem !default;
 $navbar-nav-link-padding-x: 1rem;
+//$navbar-brand-padding-y: ($nav-link-height - $navbar-brand-height) / 2 !default;
+$navbar-brand-padding-y: 0;
 
+// excerpt from _variables.scss
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1140px
+// ) !default;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 962px
+);
 
+@import "extend";
 
 // Required
 @import "node_modules/bootstrap/scss/functions";
@@ -19,13 +38,16 @@ $spacers: (
 );
 
 // Optional
+@import "node_modules/bootstrap/scss/root";
 @import "node_modules/bootstrap/scss/reboot";
 @import "node_modules/bootstrap/scss/type";
 @import "node_modules/bootstrap/scss/images";
-@import "node_modules/bootstrap/scss/code";
+//@import "node_modules/bootstrap/scss/code";
 @import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/buttons";
 
 @import "node_modules/bootstrap/scss/navbar";
+@import "node_modules/bootstrap/scss/card";
 @import "node_modules/bootstrap/scss/utilities";
 
 // from boostra.scss
